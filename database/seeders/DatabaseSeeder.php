@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             // AdminUserSeeder::class,
             CategorySeeder::class,
             SongketSeeder::class,
-            AdminSeeder::class
+            AdminUserSeeder::class
         ]);
     }
 }
