@@ -51,14 +51,22 @@ class DashboardController extends Controller
                 ->get();
         }
 
+        if (DB::getDriverName() === 'sqlite') {
+            $year = DB::raw("strftime('%Y', created_at) as year");
+            $month = DB::raw("strftime('%m', created_at) as month");
+        } else {
+            $year = DB::raw("YEAR(created_at) as year");
+            $month = DB::raw("MONTH(created_at) as month");
+        }
+
         // Monthly revenue chart data (visible to cashiers and owners)
         $monthlyRevenue = collect();
         if ($user->canAccess('manage_orders') || $user->canAccess('view_all_reports')) {
             $monthlyRevenue = Order::where('status', OrderStatus::COMPLETED)
                 ->where('created_at', '>=', now()->subMonths(12))
                 ->select(
-                    DB::raw('YEAR(created_at) as year'),
-                    DB::raw('MONTH(created_at) as month'),
+                    $year,
+                    $month,
                     DB::raw('SUM(total_amount) as revenue')
                 )
                 ->groupBy('year', 'month')

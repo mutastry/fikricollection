@@ -51,7 +51,7 @@
                 <ul class="space-y-2 text-gray-300">
                     <li class="flex items-center">
                         <x-icon name="heroicon-o-map-pin" class="h-4 w-4 mr-2" />
-                        Jl. Sudirman No. 123, Palembang
+                        Jl. Ki Rangga Wirasantika Wirosentiko No.500, 30 Ilir, Kec. Ilir Bar. II, Kota Palembang, Sumatera Selatan 30129
                     </li>
                     <li class="flex items-center">
                         <x-icon name="heroicon-o-phone" class="h-4 w-4 mr-2" />

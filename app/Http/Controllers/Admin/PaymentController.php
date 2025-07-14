@@ -121,7 +121,7 @@ class PaymentController extends Controller
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function ($q) use ($search) {
-                $q->where('payment_reference', 'like', "%{$search}%")
+                $q->where('order_id', 'like', "%{$search}%")
                     ->orWhereHas('order.user', function ($userQuery) use ($search) {
                         $userQuery->where('name', 'like', "%{$search}%")
                             ->orWhere('email', 'like', "%{$search}%");
@@ -134,7 +134,7 @@ class PaymentController extends Controller
         }
 
         if ($request->filled('method')) {
-            $query->where('method', $request->method);
+            $query->where('payment_method', $request->method);
         }
 
         if ($request->filled('date_from')) {
@@ -168,12 +168,12 @@ class PaymentController extends Controller
             // Add data rows
             foreach ($payments as $payment) {
                 fputcsv($handle, [
-                    $payment->payment_reference,
-                    $payment->order->order_number,
+                    $payment->payment_proof,
+                    $payment->order_id,
                     $payment->order->user->name,
                     number_format($payment->amount, 0, ',', '.'),
-                    $payment->method->label(),
-                    $payment->status->label(),
+                    $payment->payment_method->label(),
+                    $payment->payment_status->label(),
                     $payment->created_at->format('d/m/Y H:i:s'),
                     $payment->verified_at ? $payment->verified_at->format('d/m/Y H:i:s') : '-'
                 ]);

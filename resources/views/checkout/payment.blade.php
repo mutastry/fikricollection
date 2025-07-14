@@ -348,8 +348,8 @@
                                                 Store Address
                                             </h4>
                                             <p class="text-sm text-gray-600">
-                                                Jl. Sudirman No. 123<br>
-                                                Palembang, South Sumatra 30126
+                                                Jl. Ki Rangga Wirasantika Wirosentiko No.500, 30 Ilir, Kec. Ilir Bar. II<br>
+                                                Palembang, South Sumatra 30129
                                             </p>
                                         </div>
                                         <div>

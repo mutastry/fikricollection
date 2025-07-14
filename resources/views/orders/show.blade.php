@@ -386,8 +386,8 @@
                                     <x-icon name="heroicon-o-map-pin" class="h-5 w-5 text-gray-400 mt-1" />
                                     <div>
                                         <p class="text-sm text-gray-600">Store Address</p>
-                                        <p class="font-semibold text-gray-900">Jl. Sudirman No. 123<br>Palembang, South
-                                            Sumatra 30126</p>
+                                        <p class="font-semibold text-gray-900">Jl. Ki Rangga Wirasantika Wirosentiko No.500, 30 Ilir, Kec. Ilir Bar. II<br>Palembang, South
+                                            Sumatra 30129</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-3">
